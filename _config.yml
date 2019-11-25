@@ -22,11 +22,11 @@ urls:
 # Edit these details 
 
 author_logo: profile.png
-author: John Doe
-author_bio: Hi, My Name is John Doe. I love to Code and Design. devlopr-jekyll is a theme built for developers.  
+author: 김관응
+author_bio: 안녕하세요. 김관응 입니다.
 author_email: "kwaneung95@gmail.com"
 author_location: Korea
-author_website_url: "http://johndoe.com"
+author_website_url: "whatsup95.tistory.com"
 
 author_work_experiences: 
             - company_name: Google

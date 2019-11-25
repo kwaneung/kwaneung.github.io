@@ -2,5 +2,5 @@
 title: Contact
 menus: header
 layout: contact_me
-permalink: /contact
+permalink: /www.naver.com
 ---

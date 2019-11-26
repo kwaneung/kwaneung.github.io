@@ -3,12 +3,12 @@ layout: post
 title: About Hypervisor
 author: Kim Kwaneung
 date: '2019-11-26 23:26:23 +0530'
-category: guides
+category: virtuallization
 summary: Different types of hypervisors
 thumbnail: devlopr.png
 ---
 
-If you are a developer, who want a fast static website with no cost for hosting/domain stuff. This guide will help you setup a blog for you for free using [devlopr-jekyll](https://github.com/sujaykundu777/devlopr-jekyll.git) theme
+오늘은 Hypervisor에 대해 공부를 해볼거
 
 Before Proceeding Lets Setup Our Development Environment :
 

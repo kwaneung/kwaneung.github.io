@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Guides
-permalink: /blog/categories/guides
+title: Virtuallization
+permalink: /blog/categories/virtuallization
 ---
  
 <h5> Posts by Category : {{ page.title }} </h5>

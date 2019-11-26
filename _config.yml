@@ -15,8 +15,8 @@ urls:
       url: /about/
     - text: Contact Me
       url : /contact/
-    - text: Styleguide
-      url: /styleguide/
+#     - text: Styleguide
+#       url: /styleguide/
     
 
 # Edit these details 
@@ -44,8 +44,8 @@ author_work_experiences:
 
 author_education_details:
               - college_logo: mit.png
-                college_name: MIT
-                college_url: https://mit.org
+                college_name: KPU
+                college_url: http://www.kpu.ac.kr
                 college_degree: CS Engineer
                 description: Bachelor of Technology
                 visibility: true
@@ -63,15 +63,15 @@ author_project_details:
                 visibility: true
 
 # social links
-#twitter_username: johndoe
+#twitter_username: username
 github_username:  kwaneung
 facebook_username: gwaneung.kim
-#linkedin_username: johndoe
-#behance_username: johndoe
-#instagram_username: johndoe
-#medium_username: johndoe
-#telegram_username: johndoe
-#dribbble_username: johndoe
+#linkedin_username: username
+#behance_username: username
+#instagram_username: username
+#medium_username: username
+#telegram_username: username
+#dribbble_username: username
 #flickr_username: johndoe
 
 #for comments using disqus

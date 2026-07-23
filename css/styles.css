@@ -288,8 +288,8 @@ a:hover {
   min-height: calc(100svh - var(--nav-h));
   display: grid;
   align-items: end;
-  padding: clamp(2rem, 6vh, 4rem) 0 clamp(2.5rem, 7vh, 5rem);
-  overflow: hidden;
+  padding: clamp(1.75rem, 5vh, 3.5rem) 0 clamp(2.25rem, 6vh, 4.25rem);
+  overflow: clip;
 }
 
 .hero__visual {
@@ -365,10 +365,10 @@ a:hover {
 }
 
 .hero__brand {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(3.75rem, 12vw, 7.5rem);
+  font-size: clamp(3.25rem, 10vw, 6.25rem);
   line-height: 0.92;
   letter-spacing: -0.06em;
   animation: rise 0.9s var(--ease) both;

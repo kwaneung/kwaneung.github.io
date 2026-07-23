@@ -136,7 +136,7 @@ a:hover {
   display: flex;
   align-items: center;
   background: transparent;
-  border-bottom: 1px solid transparent;
+  /* Border lives on ::before only — a border here caused a 1px gap above the menu */
 }
 
 /* Full-bleed bar sits above the mobile menu so the panel slides out from under it */
@@ -160,7 +160,8 @@ a:hover {
 
 .nav__inner {
   position: relative;
-  z-index: 3;
+  /* No z-index: keep brand/toggle and the menu in .nav's stacking context
+     so ::before can sit between them (menu under the bar). */
   width: min(100% - (var(--gutter) * 2), var(--max));
   height: var(--nav-h);
   margin-inline: auto;
@@ -168,6 +169,12 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.nav__brand,
+.nav__toggle {
+  position: relative;
+  z-index: 3;
 }
 
 .nav__brand {

@@ -42,9 +42,10 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   /*
-   * Safari 26 Liquid Glass samples root backgrounds for the bottom address-bar chin.
-   * Transparent html/body falls back to system white — the opaque shelf in screenshots.
-   * Keep an explicit paper fill so the chrome tint matches the page instead.
+   * Safari 26 Liquid Glass samples root / fixed edge backgrounds for the
+   * address-bar chin. Transparent falls back to system white (the opaque
+   * shelf). Keep paper as the default; .safari-chrome-tint overrides when
+   * the dark Approach band sits under the toolbar.
    */
   background-color: var(--paper);
 }
@@ -65,7 +66,11 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Stay >3px from the bottom so Safari does not sample this wash for the chin */
+  bottom: 4px;
   pointer-events: none;
   z-index: 0;
   background:
@@ -77,12 +82,46 @@ body::before {
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 4px;
   pointer-events: none;
   z-index: 0;
   opacity: 0.35;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
   mix-blend-mode: multiply;
+}
+
+/*
+ * Safari 26 bottom-toolbar tint probe. Fixed + near the bottom edge + ≥80%
+ * wide → sampled for the Liquid Glass chin. Mostly off-screen; color is
+ * synced in JS to the section under the address bar (paper vs ink).
+ */
+.safari-chrome-tint {
+  display: none;
+  position: fixed;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  min-height: 12px;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-color: var(--paper);
+}
+
+@supports (-webkit-text-size-adjust: none) and (font: -apple-system-body) and (-webkit-touch-callout: none) {
+  @media (max-width: 760px) {
+    .safari-chrome-tint {
+      display: block;
+    }
+  }
+}
+
+.safari-chrome-tint.is-ink {
+  background-color: var(--ink);
 }
 
 img {

@@ -41,6 +41,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Keep bottom OS chrome visually open; page wash paints through safe areas */
+  background: transparent;
 }
 
 body {
@@ -129,22 +131,38 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  height: var(--nav-h);
+  height: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
   display: flex;
   align-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* Full-bleed bar sits above the mobile menu so the panel slides out from under it */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
   backdrop-filter: blur(14px);
-  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  background: color-mix(in srgb, var(--paper) 82%, white);
   border-bottom: 1px solid transparent;
   transition: border-color 0.35s var(--ease), background 0.35s var(--ease);
 }
 
-.nav.is-scrolled {
+.nav.is-scrolled::before {
   border-bottom-color: var(--line);
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  background: color-mix(in srgb, var(--paper) 92%, white);
 }
 
 .nav__inner {
+  position: relative;
+  z-index: 3;
   width: min(100% - (var(--gutter) * 2), var(--max));
+  height: var(--nav-h);
   margin-inline: auto;
   display: flex;
   align-items: center;
@@ -248,14 +266,17 @@ a:hover {
 
   .nav__links {
     position: fixed;
-    inset: var(--nav-h) 0 auto 0;
+    top: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
+    left: 0;
+    right: 0;
+    z-index: 1;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     padding: 0.5rem var(--gutter) 1.25rem;
     background: color-mix(in srgb, var(--paper) 96%, white);
     border-bottom: 1px solid var(--line);
-    transform: translateY(-120%);
+    transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: transform 0.45s var(--ease), opacity 0.3s ease;
@@ -277,15 +298,28 @@ a:hover {
     padding: 0.95rem 0;
   }
 
+  /* Match Work / Approach / Contact link style on mobile */
   .nav__cta {
-    margin-top: 0.75rem;
+    margin-top: 0;
+    padding: 0.95rem 0;
+    background: transparent;
+    color: var(--ink-soft) !important;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .nav__cta:hover {
+    background: transparent;
+    color: var(--ink) !important;
+    transform: none;
   }
 }
 
 /* —— Hero —— */
 .hero {
   position: relative;
-  min-height: calc(100svh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h) - env(safe-area-inset-top, 0px));
   display: grid;
   align-items: end;
   padding: clamp(1.75rem, 5vh, 3.5rem) 0 clamp(2.25rem, 6vh, 4.25rem);
@@ -712,8 +746,10 @@ a:hover {
 
 /* —— Footer —— */
 .footer {
-  padding: 2rem 0 2.75rem;
+  padding: 2rem 0 calc(2.75rem + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--line);
+  /* Bottom safe area stays visually open — page wash shows through; no solid fill */
+  background: transparent;
 }
 
 .footer__inner {
@@ -891,7 +927,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.5rem 0 3rem;
+  padding: 1.5rem 0 calc(3rem + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--line);
 }
 

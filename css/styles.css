@@ -41,14 +41,15 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  /* Keep bottom OS chrome visually open; page wash paints through safe areas */
+  /* Keep OS chrome open; avoid a solid plate under the Safari toolbar */
   background: transparent;
 }
 
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--paper);
+  /* Transparent so iOS Safari 26+ does not tint the bottom bar with --paper */
+  background: transparent;
   font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
@@ -61,7 +62,11 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Stay >3px from the bottom edge so Safari does not sample this for toolbar tint */
+  bottom: 4px;
   pointer-events: none;
   z-index: 0;
   background:
@@ -73,7 +78,10 @@ body::before {
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 4px;
   pointer-events: none;
   z-index: 0;
   opacity: 0.35;
@@ -119,6 +127,23 @@ a:hover {
 .site {
   position: relative;
   z-index: 1;
+}
+
+/*
+ * iOS Safari 26+ samples fixed/sticky edge backgrounds for toolbar tint.
+ * A bottom sentinel with no fill opts the address-bar chin into transparent glass
+ * so page content shows through instead of a white frosted shelf.
+ */
+.site::after {
+  content: "";
+  position: fixed;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  pointer-events: none;
+  z-index: 40;
+  /* no background-color, no backdrop-filter */
 }
 
 .wrap {

@@ -2,26 +2,14 @@
   const nav = document.querySelector(".nav");
   const toggle = document.querySelector(".nav__toggle");
   const links = document.querySelector(".nav__links");
-  const chromeTint = document.querySelector("[data-safari-chrome-tint]");
-  const approach = document.querySelector("#approach");
-
-  const syncSafariChromeTint = () => {
-    if (!chromeTint || !approach) return;
-    // Probe the band under the floating address bar / home-indicator chin
-    const rect = approach.getBoundingClientRect();
-    const viewportBottom = window.innerHeight;
-    const coversChin = rect.top < viewportBottom - 8 && rect.bottom > viewportBottom - 24;
-    chromeTint.classList.toggle("is-ink", coversChin);
-  };
 
   const onScroll = () => {
-    if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 8);
-    syncSafariChromeTint();
+    if (!nav) return;
+    nav.classList.toggle("is-scrolled", window.scrollY > 8);
   };
 
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", syncSafariChromeTint, { passive: true });
 
   if (toggle && nav && links) {
     let closeTimer = 0;

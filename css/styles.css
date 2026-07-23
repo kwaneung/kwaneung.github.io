@@ -41,14 +41,18 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  /* Keep bottom OS chrome visually open; page wash paints through safe areas */
-  background: transparent;
+  /*
+   * Safari 26 Liquid Glass samples root backgrounds for the bottom address-bar chin.
+   * Transparent html/body falls back to system white — the opaque shelf in screenshots.
+   * Keep an explicit paper fill so the chrome tint matches the page instead.
+   */
+  background-color: var(--paper);
 }
 
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--paper);
+  background-color: var(--paper);
   font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
@@ -282,15 +286,26 @@ a:hover {
     gap: 0;
     /* No top padding — first item (Work) sits flush under the header */
     padding: 0 var(--gutter) 1.25rem;
-    background: color-mix(in srgb, var(--paper) 96%, white);
-    border-bottom: 1px solid var(--line);
+    /*
+     * Safari 26 still samples opacity:0 fixed layers. A near-white fill here
+     * tints the Liquid Glass chrome even while the menu is closed — keep the
+     * closed panel unpainted, and drop it from the render tree via [hidden].
+     */
+    background: transparent;
+    border-bottom: 1px solid transparent;
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: transform 0.45s var(--ease), opacity 0.3s ease;
   }
 
+  .nav__links[hidden] {
+    display: none;
+  }
+
   .nav.is-open .nav__links {
+    background: color-mix(in srgb, var(--paper) 96%, white);
+    border-bottom-color: var(--line);
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;

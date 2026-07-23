@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>우리카드 유니버셜 — 김관응</title>
+    <meta
+      name="description"
+      content="우리금융지주 슈퍼앱용 우리카드 WebView 구축과 원트래블 Next.js 내재화를 진행한 채널계 케이스."
+    />
+    <link rel="canonical" href="https://kwaneung.github.io/work/woori-card/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 건너뛰기</a>
+    <div class="site">
+      <header class="nav" data-nav>
+        <div class="nav__inner">
+          <a class="nav__brand" href="/">김관응</a>
+          <button class="nav__toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+          </button>
+          <ul class="nav__links" id="site-nav">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#approach">Approach</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a class="nav__cta" href="mailto:kwaneung.kim@outlook.com">Email</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <main id="main">
+        <header class="project-hero">
+          <div class="wrap">
+            <a class="project-hero__back" href="/#work">← Selected work</a>
+            <p class="project-hero__kicker">03 · SK AX · 2024.05 – 2025.02</p>
+            <h1>우리카드 유니버셜</h1>
+            <p class="project-hero__lead">
+              우리금융지주 슈퍼앱에 들어갈 우리카드 WebView를 구축하고, 외부 원트래블
+              Next.js 소스를 내재화해 자체 운영·네이티브 WebView 정합까지 맞췄습니다.
+            </p>
+            <dl class="project-meta">
+              <div>
+                <dt>Role</dt>
+                <dd>채널계 · WebView / 내재화</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>슈퍼앱 · 대출 UX · 소유권</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>React · Next.js · TS</dd>
+              </div>
+              <div>
+                <dt>Type</dt>
+                <dd>Financial Hybrid</dd>
+              </div>
+            </dl>
+          </div>
+        </header>
+
+        <article class="prose">
+          <div class="wrap prose__inner">
+            <section class="reveal">
+              <h2>문제</h2>
+              <p>
+                프로젝트는 두 축이었습니다. 슈퍼앱 안에 우리카드 영역을 WebView로 넣으면서
+                금융 UI/UX·규정을 지켜야 했고, 외부에 있던 원트래블 Next.js는 수정 속도와
+                소유권이 떨어져 내재화가 필요했습니다.
+              </p>
+            </section>
+
+            <section class="reveal">
+              <h2>솔루션</h2>
+              <ul>
+                <li>우리은행 UI/UX 가이드 기반 WebView 화면·플로우 대응</li>
+                <li>대출 영역 UI/UX·기능 고도화</li>
+                <li>Promise AJAX로 콜백 지옥을 정리하고 공통 컴포넌트·API 재구성</li>
+                <li>원트래블 Next.js 소스·웹서버를 사내로 이전 후 자체 운영</li>
+                <li>네이티브 WebView 규약에 맞게 라우팅·연동·UI 재맞춤</li>
+              </ul>
+            </section>
+
+            <section class="reveal">
+              <h2>결정의 포인트</h2>
+              <ul>
+                <li>성격이 다른 두 축을 WebView 구축과 Next.js 소유권 이전으로 범위를 고정</li>
+                <li>내재화 후 WebView 정합을 별도 단계로 두어 깨짐을 방지</li>
+                <li>구조 정리(Promise AJAX·공통 모듈)를 함께 진행해 이후 유지보수 비용을 줄임</li>
+              </ul>
+            </section>
+
+            <section class="reveal">
+              <h2>성과</h2>
+              <ul>
+                <li>슈퍼앱용 우리카드 WebView 구축</li>
+                <li>외부 Next.js 의존을 제거하고 자체 운영 체계로 전환</li>
+                <li>공통 모듈화로 재사용성·유지보수성 개선</li>
+              </ul>
+              <blockquote class="quote">
+                슈퍼앱 WebView 구축과 원트래블 Next.js 내재화를 병렬로 완수하며, 대출 UX
+                고도화와 공통 모듈 정리까지 함께 수행했습니다.
+              </blockquote>
+            </section>
+
+            <section class="reveal">
+              <h2>Stack</h2>
+              <div class="stack-pills">
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>React</span>
+                <span>Next.js</span>
+                <span>jQuery</span>
+                <span>Styled Components</span>
+                <span>Java</span>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <nav class="wrap project-nav" aria-label="프로젝트 이동">
+          <a href="/work/kds/">
+            <small>Previous</small>
+            <strong>KT UX Design System</strong>
+          </a>
+          <a href="/work/solbiz/">
+            <small>Next</small>
+            <strong>신한 쏠비즈 전면개편</strong>
+          </a>
+        </nav>
+      </main>
+
+      <footer class="footer">
+        <div class="wrap footer__inner">
+          <span>© 2026 김관응</span>
+          <a href="/#contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MYKT 차세대 웹 — 김관응</title>
+    <meta
+      name="description"
+      content="KT MYKT 차세대 웹을 Nx 멀티앱으로 설계하고, 공유 플랫폼·홈 SDUI·GitOps까지 end-to-end로 구축한 케이스."
+    />
+    <link rel="canonical" href="https://kwaneung.github.io/work/mykt/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 건너뛰기</a>
+    <div class="site">
+      <header class="nav" data-nav>
+        <div class="nav__inner">
+          <a class="nav__brand" href="/">김관응</a>
+          <button class="nav__toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+          </button>
+          <ul class="nav__links" id="site-nav">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#approach">Approach</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a class="nav__cta" href="mailto:kwaneung.kim@outlook.com">Email</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <main id="main">
+        <header class="project-hero">
+          <div class="wrap">
+            <a class="project-hero__back" href="/#work">← Selected work</a>
+            <p class="project-hero__kicker">01 · KT · 2025.02 – Present</p>
+            <h1>MYKT 차세대 웹</h1>
+            <p class="project-hero__lead">
+              통신사 B2C 메인 앱을 앱 단위로 분리 가능한 모노레포로 재설계하고, 공유
+              플랫폼·홈 도메인·배포 파이프라인까지 end-to-end로 구축했습니다.
+            </p>
+            <dl class="project-meta">
+              <div>
+                <dt>Role</dt>
+                <dd>FE 설계 · 공통 기반 · 홈 · CI/CD</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>멀티앱 · SDUI · GitOps</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>Nx · Next.js · React</dd>
+              </div>
+              <div>
+                <dt>Type</dt>
+                <dd>Enterprise B2C WebView</dd>
+              </div>
+            </dl>
+          </div>
+        </header>
+
+        <article class="prose">
+          <div class="wrap prose__inner">
+            <section class="reveal">
+              <h2>문제</h2>
+              <p>
+                기존 웹은 단일 앱에 기능이 밀집되어 있었습니다. AI 챗과 메인 서비스의
+                릴리스 주기·트래픽 특성이 다른데도 함께 배포되었고, 도메인이 늘수록 경계가
+                흐려졌습니다. Android/iOS WebView 하이브리드와 엔터프라이즈 배포를 동시에
+                만족해야 했습니다.
+              </p>
+            </section>
+
+            <section class="reveal">
+              <h2>솔루션</h2>
+              <p>
+                코드는 모노레포에서 공유하고, 배포·장애 단위는 앱으로 나눴습니다. 메인
+                앱과 에이전트(AI 챗) 앱을 Ingress path로 분리하고, 공통 libs와 BFF로
+                플랫폼을 고정했습니다.
+              </p>
+              <ul>
+                <li>util → data-access → ui → feature 4계층을 린트/CI로 강제</li>
+                <li>공통 fetcher/BFF로 인증·장애 등 횡단 관심사 중앙화</li>
+                <li>네이티브 브릿지를 Promise API로 추상화하고 로컬 mock 지원</li>
+                <li>홈을 CMS 기반 Server-Driven UI·카드 단위 장애 격리로 재설계</li>
+                <li>Nx affected → Docker → K8s/ArgoCD GitOps·승격 게이트까지 설계</li>
+              </ul>
+            </section>
+
+            <section class="reveal">
+              <h2>결정의 포인트</h2>
+              <ul>
+                <li>홈 전체가 무너지지 않도록 카드 단위 스트리밍·에러 경계로 부분 실패 UX</li>
+                <li>UI 순수성을 위해 앱 전용 로직은 Context 주입으로 분리</li>
+                <li>운영 배포는 스테이징 검증 경로를 파이프라인에서 강제</li>
+              </ul>
+            </section>
+
+            <section class="reveal">
+              <h2>성과</h2>
+              <ul>
+                <li>메인·에이전트 독립 배포로 릴리스·장애 격리</li>
+                <li>CMS 주도 카드 시스템으로 노출·순서를 코드 배포 없이 제어</li>
+                <li>공통 플랫폼과 GitOps로 팀 확장과 운영 자동화 기반 확보</li>
+              </ul>
+              <blockquote class="quote">
+                Nx 멀티앱으로 경계를 나누고, 공유 플랫폼·홈 SDUI·CI/CD·GitOps까지 한 흐름으로
+                구축해 확장 가능하고 회복탄력적인 B2C 웹을 만들었습니다.
+              </blockquote>
+            </section>
+
+            <section class="reveal">
+              <h2>Stack</h2>
+              <div class="stack-pills">
+                <span>Nx</span>
+                <span>Next.js 16</span>
+                <span>React 19</span>
+                <span>TypeScript</span>
+                <span>TanStack Query</span>
+                <span>KDS</span>
+                <span>GitHub Actions</span>
+                <span>Kubernetes</span>
+                <span>ArgoCD</span>
+                <span>Datadog</span>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <nav class="wrap project-nav" aria-label="프로젝트 이동">
+          <a href="/work/fund-direct/">
+            <small>Previous</small>
+            <strong>수익증권 직접판매</strong>
+          </a>
+          <a href="/work/kds/">
+            <small>Next</small>
+            <strong>KT UX Design System</strong>
+          </a>
+        </nav>
+      </main>
+
+      <footer class="footer">
+        <div class="wrap footer__inner">
+          <span>© 2026 김관응</span>
+          <a href="/#contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

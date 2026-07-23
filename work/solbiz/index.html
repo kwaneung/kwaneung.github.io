@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>신한 쏠비즈 전면개편 — 김관응</title>
+    <meta
+      name="description"
+      content="신한은행 쏠비즈 채널의 jQuery 레거시를 React로 재구축하고 그룹 표준 UI와 성능을 개선한 케이스."
+    />
+    <link rel="canonical" href="https://kwaneung.github.io/work/solbiz/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 건너뛰기</a>
+    <div class="site">
+      <header class="nav" data-nav>
+        <div class="nav__inner">
+          <a class="nav__brand" href="/">김관응</a>
+          <button class="nav__toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+          </button>
+          <ul class="nav__links" id="site-nav">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#approach">Approach</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a class="nav__cta" href="mailto:kwaneung.kim@outlook.com">Email</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <main id="main">
+        <header class="project-hero">
+          <div class="wrap">
+            <a class="project-hero__back" href="/#work">← Selected work</a>
+            <p class="project-hero__kicker">04 · SK AX · 2023.07 – 2024.01</p>
+            <h1>신한 쏠비즈 전면개편</h1>
+            <p class="project-hero__lead">
+              jQuery 기반 레거시 화면을 React로 전면 재구축하고, 신한금융그룹 표준 UI/UX와
+              TypeScript 공통 함수·번들 최적화로 채널 체감 성능과 유지보수성을 올렸습니다.
+            </p>
+            <dl class="project-meta">
+              <div>
+                <dt>Role</dt>
+                <dd>채널계 · 리팩토링 / 성능</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>jQuery → React · 표준 UI</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>React · TypeScript</dd>
+              </div>
+              <div>
+                <dt>Type</dt>
+                <dd>Financial Channel</dd>
+              </div>
+            </dl>
+          </div>
+        </header>
+
+        <article class="prose">
+          <div class="wrap prose__inner">
+            <section class="reveal">
+              <h2>문제</h2>
+              <p>
+                화면·스크립트가 늘수록 중복과 결합도가 커지고 변경 비용이 높았습니다. 그룹
+                표준 UI와 어긋난 경험, 초기 로딩·번들 비대화, 그리고 프론트만으로는 해결되지
+                않는 백엔드 구간 병목이 겹쳐 있었습니다.
+              </p>
+            </section>
+
+            <section class="reveal">
+              <h2>솔루션</h2>
+              <ul>
+                <li>화면 단위로 jQuery를 React 컴포넌트 기반으로 이전</li>
+                <li>신한금융그룹 표준 UI/UX를 적용해 채널 경험을 정렬</li>
+                <li>TypeScript 공통 순수 함수로 복제 로직을 공유·검증 가능하게 분리</li>
+                <li>코드 스플리팅·트리셰이킹으로 초기 번들·로딩 개선</li>
+                <li>API·서버 측 병목까지 포함해 전 구간 최적화</li>
+              </ul>
+            </section>
+
+            <section class="reveal">
+              <h2>결정의 포인트</h2>
+              <ul>
+                <li>한 번에 바꾸지 않고 화면·도메인 단위로 이전해 동작 유지와 표준화를 병행</li>
+                <li>공통 로직을 순수 함수 계약으로 고정해 UI는 조합에 집중</li>
+                <li>체감 성능을 위해 FE 범위를 넘어 백엔드 구간까지 함께 봄</li>
+              </ul>
+            </section>
+
+            <section class="reveal">
+              <h2>성과</h2>
+              <ul>
+                <li>채널 차세대에서 jQuery → React 전환의 실무 경험</li>
+                <li>그룹 표준 UI로 채널 UX 일관성 확보</li>
+                <li>공통 TS 유틸·번들 전략으로 유지보수·초기 로딩 개선</li>
+              </ul>
+              <blockquote class="quote">
+                레거시를 React로 재구축하며 표준 UI·타입 안전 공통 로직·전 구간 성능까지
+                한 번에 끌어올린 채널 개편 경험이었습니다.
+              </blockquote>
+            </section>
+
+            <section class="reveal">
+              <h2>Stack</h2>
+              <div class="stack-pills">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>JavaScript</span>
+                <span>Java</span>
+                <span>BXM</span>
+                <span>Oracle</span>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <nav class="wrap project-nav" aria-label="프로젝트 이동">
+          <a href="/work/woori-card/">
+            <small>Previous</small>
+            <strong>우리카드 유니버셜</strong>
+          </a>
+          <a href="/work/fund-direct/">
+            <small>Next</small>
+            <strong>수익증권 직접판매</strong>
+          </a>
+        </nav>
+      </main>
+
+      <footer class="footer">
+        <div class="wrap footer__inner">
+          <span>© 2026 김관응</span>
+          <a href="/#contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>김관응 — Product Engineer</title>
+    <meta
+      name="description"
+      content="프론트엔드 구현을 넘어 서비스 경계·아키텍처·운영까지 책임지는 Product Engineer, 김관응."
+    />
+    <meta name="theme-color" content="#eef1f4" />
+    <link rel="canonical" href="https://kwaneung.github.io/" />
+    <meta property="og:title" content="김관응 — Product Engineer" />
+    <meta
+      property="og:description"
+      content="서비스 경계·아키텍처·운영까지 end-to-end로 설계하는 Product Engineer."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kwaneung.github.io/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 건너뛰기</a>
+    <div class="site">
+      <header class="nav" data-nav>
+        <div class="nav__inner">
+          <a class="nav__brand" href="/">김관응</a>
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="메뉴 열기"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span></span>
+          </button>
+          <ul class="nav__links" id="site-nav">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a class="nav__cta" href="mailto:kwaneung.kim@outlook.com">Email</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="hero" aria-label="소개">
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__orb"></div>
+            <div class="hero__grid"></div>
+            <div class="hero__plane"></div>
+          </div>
+          <div class="hero__content">
+            <p class="hero__brand">김관응</p>
+            <h1 class="hero__headline">Product Engineer</h1>
+            <p class="hero__lead">
+              서비스 경계·아키텍처·운영까지 설계하고, AI 친화적 환경으로 제품을 빠르게
+              안정화합니다.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#work">Selected work</a>
+              <a class="btn btn--ghost" href="#contact">Contact</a>
+            </div>
+          </div>
+          <div class="hero__meta" aria-hidden="true">
+            <span>KT · FE / DS</span>
+            <span>6y+ · Seoul</span>
+          </div>
+        </section>
+
+        <section class="section" id="work">
+          <div class="wrap">
+            <header class="section__head reveal">
+              <p class="section__label">Selected work</p>
+              <h2 class="section__title">설계에서 운영까지 이어진 다섯 개의 제품</h2>
+              <p class="section__desc">
+                통신·금융 채널에서 아키텍처, 디자인 시스템, WebView, 레거시 전환을 주도한
+                공개용 요약입니다.
+              </p>
+            </header>
+
+            <ol class="work-list">
+              <li class="work-item reveal" style="--i: 0">
+                <a href="/work/mykt/">
+                  <span class="work-item__index">01</span>
+                  <div class="work-item__body">
+                    <h3 class="work-item__title">MYKT 차세대 웹</h3>
+                    <p class="work-item__summary">
+                      Nx 멀티앱·공통 플랫폼·홈 SDUI·GitOps를 end-to-end로 구축
+                    </p>
+                  </div>
+                  <span class="work-item__meta">2025 – Now · KT</span>
+                </a>
+              </li>
+              <li class="work-item reveal" style="--i: 1">
+                <a href="/work/kds/">
+                  <span class="work-item__index">02</span>
+                  <div class="work-item__body">
+                    <h3 class="work-item__title">KT UX Design System</h3>
+                    <p class="work-item__summary">
+                      토큰 SSOT·4테마·AI UI를 한 DS 파이프라인으로 설계·운영
+                    </p>
+                  </div>
+                  <span class="work-item__meta">2026 – Now · KT</span>
+                </a>
+              </li>
+              <li class="work-item reveal" style="--i: 2">
+                <a href="/work/woori-card/">
+                  <span class="work-item__index">03</span>
+                  <div class="work-item__body">
+                    <h3 class="work-item__title">우리카드 유니버셜</h3>
+                    <p class="work-item__summary">
+                      슈퍼앱 WebView 구축과 원트래블 Next.js 내재화
+                    </p>
+                  </div>
+                  <span class="work-item__meta">2024 – 2025 · SK AX</span>
+                </a>
+              </li>
+              <li class="work-item reveal" style="--i: 3">
+                <a href="/work/solbiz/">
+                  <span class="work-item__index">04</span>
+                  <div class="work-item__body">
+                    <h3 class="work-item__title">신한 쏠비즈 전면개편</h3>
+                    <p class="work-item__summary">
+                      jQuery 레거시를 React로 재구축하고 채널 성능·UX를 정렬
+                    </p>
+                  </div>
+                  <span class="work-item__meta">2023 – 2024 · SK AX</span>
+                </a>
+              </li>
+              <li class="work-item reveal" style="--i: 4">
+                <a href="/work/fund-direct/">
+                  <span class="work-item__index">05</span>
+                  <div class="work-item__body">
+                    <h3 class="work-item__title">수익증권 직접판매</h3>
+                    <p class="work-item__summary">
+                      법인·개인 직판 채널을 FE·BE·배치·연동까지 전 구간 구축
+                    </p>
+                  </div>
+                  <span class="work-item__meta">2020 – 2023 · 신한펀드파트너스</span>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section approach" id="approach">
+          <div class="wrap">
+            <header class="section__head reveal">
+              <p class="section__label">Approach</p>
+              <h2 class="section__title">구현을 넘어, 시스템이 버티게 설계합니다</h2>
+              <p class="section__desc">
+                Product Engineer로서 서비스 단위 오너십을 잡고, 구조·문서·배포·관측까지 한
+                흐름으로 연결합니다.
+              </p>
+            </header>
+            <div class="approach__grid">
+              <article class="approach__item reveal">
+                <h3>Design</h3>
+                <p>
+                  멀티앱 경계, 데이터 계층, 인증·에러 처리, 릴리스 단위 같은 구조적
+                  의사결정을 문서와 코드로 고정합니다.
+                </p>
+              </article>
+              <article class="approach__item reveal">
+                <h3>Ownership</h3>
+                <p>
+                  기능이 아니라 서비스·도메인을 정의하고, 설계부터 개발·운영까지 end-to-end로
+                  책임집니다.
+                </p>
+              </article>
+              <article class="approach__item reveal">
+                <h3>AI-native</h3>
+                <p>
+                  계층·경계가 명확한 코드베이스와 스펙 선행으로, 팀과 AI가 같은 맥락에서
+                  빠르게 기여하게 만듭니다.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <div class="wrap contact__row">
+            <header class="section__head reveal" style="margin-bottom: 0">
+              <p class="section__label">Contact</p>
+              <h2 class="section__title">함께 만들 제품이 있다면 메일로 연락해 주세요</h2>
+              <p class="section__desc">
+                현재 KT에서 프론트엔드와 Design System을 다루며, 서비스 설계와 플랫폼
+                문제에 관심이 많습니다.
+              </p>
+            </header>
+            <ul class="contact__links reveal">
+              <li>
+                <a href="mailto:kwaneung.kim@outlook.com">
+                  Email
+                  <span>kwaneung.kim@outlook.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/kwaneung" rel="noopener noreferrer" target="_blank">
+                  GitHub
+                  <span>@kwaneung</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/%EA%B4%80%EC%9D%91-%EA%B9%80-38a293199"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  LinkedIn
+                  <span>Profile</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="wrap footer__inner">
+          <span>© 2026 김관응</span>
+          <span>Product Engineer · Frontend / Design System</span>
+        </div>
+      </footer>
+    </div>
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

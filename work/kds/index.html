@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KT UX Design System — 김관응</title>
+    <meta
+      name="description"
+      content="KT UX Design System Maintainer로서 Figma Token Studio부터 React 라이브러리·Storybook/Chromatic까지 토큰 SSOT 파이프라인을 설계·운영한 케이스."
+    />
+    <link rel="canonical" href="https://kwaneung.github.io/work/kds/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 건너뛰기</a>
+    <div class="site">
+      <header class="nav" data-nav>
+        <div class="nav__inner">
+          <a class="nav__brand" href="/">김관응</a>
+          <button class="nav__toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+          </button>
+          <ul class="nav__links" id="site-nav">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#approach">Approach</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a class="nav__cta" href="mailto:kwaneung.kim@outlook.com">Email</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <main id="main">
+        <header class="project-hero">
+          <div class="wrap">
+            <a class="project-hero__back" href="/#work">← Selected work</a>
+            <p class="project-hero__kicker">02 · KT · 2026.01 – Present</p>
+            <h1>KT UX Design System</h1>
+            <p class="project-hero__lead">
+              Figma Token Studio → Style Dictionary → React 컴포넌트 라이브러리 →
+              Storybook/Chromatic까지 토큰 SSOT·테마·배포 파이프라인을 메인테이너로서
+              책임졌습니다.
+            </p>
+            <dl class="project-meta">
+              <div>
+                <dt>Role</dt>
+                <dd>Design System Maintainer</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>토큰 · 테마 · 릴리스</dd>
+              </div>
+              <div>
+                <dt>Scale</dt>
+                <dd>~31 + AI UI · 4 themes</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>Vite · Style Dictionary</dd>
+              </div>
+            </dl>
+          </div>
+        </header>
+
+        <article class="prose">
+          <div class="wrap prose__inner">
+            <section class="reveal">
+              <h2>문제</h2>
+              <p>
+                프로덕트가 많을수록 브랜드 일관성과 디자이너–개발자 핸드오프 비용이
+                커집니다. 일반 UI와 에이전트(AI) UI의 테마 분기, Figma 스펙의 하드코딩
+                파편화, 버전드 라이브러리로 소비 가능한 배포 체계가 동시에 필요했습니다.
+              </p>
+            </section>
+
+            <section class="reveal">
+              <h2>솔루션</h2>
+              <p>
+                웹 전용 디자인 시스템으로 범위를 고정하고, 디자이너 토큰 동기화와 엔지니
+                컴포넌트 릴리스를 하나의 파이프라인으로 묶었습니다.
+              </p>
+              <ul>
+                <li>primitive / semantic을 SSOT로, component 레이어는 레거시 호환용으로 유지</li>
+                <li>CSS Variables + CVA/BEM 기본, Tailwind v4 `@theme`는 옵션 산출</li>
+                <li>light / dark / light-agent / dark-agent를 `data-theme`으로 전환</li>
+                <li>AI UI(Prompt* 등)를 같은 토큰·테마 체계 안에 통합</li>
+                <li>Storybook 중심 검증과 Chromatic 시각 회귀, 시맨틱 버전 릴리스</li>
+              </ul>
+            </section>
+
+            <section class="reveal">
+              <h2>결정의 포인트</h2>
+              <ul>
+                <li>component 토큰 신규 참조를 금지해 장기 드리프트·잘못된 참조 비용을 줄임</li>
+                <li>색은 semantic, spacing·radius는 primitive로 테마 적응을 분리</li>
+                <li>네이티브를 아카이브로 분리해 main의 웹 완성도에 집중</li>
+              </ul>
+            </section>
+
+            <section class="reveal">
+              <h2>성과</h2>
+              <ul>
+                <li>버전드 웹 라이브러리로 배포·소비 가능한 DS 구축</li>
+                <li>4테마 + AI 컴포넌트로 일반/에이전트 UI를 한 체계에서 지원</li>
+                <li>MYKT에서 소비하고 KDS에서 설계·운영하는 이중 역할로 핸드오프 비용 절감</li>
+              </ul>
+              <blockquote class="quote">
+                토큰 SSOT와 4테마 파이프라인을 설계·운영하며, 레거시 공존과 AI UI 통합까지
+                시스템을 유지·진화시키는 의사결정을 책임졌습니다.
+              </blockquote>
+            </section>
+
+            <section class="reveal">
+              <h2>Stack</h2>
+              <div class="stack-pills">
+                <span>pnpm</span>
+                <span>Vite</span>
+                <span>React</span>
+                <span>Style Dictionary</span>
+                <span>CVA</span>
+                <span>CSS Variables</span>
+                <span>Storybook</span>
+                <span>Chromatic</span>
+                <span>Figma Token Studio</span>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <nav class="wrap project-nav" aria-label="프로젝트 이동">
+          <a href="/work/mykt/">
+            <small>Previous</small>
+            <strong>MYKT 차세대 웹</strong>
+          </a>
+          <a href="/work/woori-card/">
+            <small>Next</small>
+            <strong>우리카드 유니버셜</strong>
+          </a>
+        </nav>
+      </main>
+
+      <footer class="footer">
+        <div class="wrap footer__inner">
+          <span>© 2026 김관응</span>
+          <a href="/#contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

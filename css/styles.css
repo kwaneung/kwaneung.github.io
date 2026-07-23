@@ -280,7 +280,8 @@ a:hover {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    padding: 0.5rem var(--gutter) 1.25rem;
+    /* No top padding — first item (Work) sits flush under the header */
+    padding: 0 var(--gutter) 1.25rem;
     background: color-mix(in srgb, var(--paper) 96%, white);
     border-bottom: 1px solid var(--line);
     transform: translateY(-100%);
@@ -293,6 +294,12 @@ a:hover {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  /* Same wash as the open menu so the join reads as one surface */
+  .nav.is-open::before {
+    background: color-mix(in srgb, var(--paper) 96%, white);
+    border-bottom-color: transparent;
   }
 
   .nav__links li {

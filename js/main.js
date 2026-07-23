@@ -12,15 +12,59 @@
   window.addEventListener("scroll", onScroll, { passive: true });
 
   if (toggle && nav && links) {
+    let closeTimer = 0;
+    const mobileNav = () => window.matchMedia("(max-width: 760px)").matches;
+
+    const syncMenuLayer = () => {
+      window.clearTimeout(closeTimer);
+      if (!mobileNav()) {
+        // Desktop: always in the layout tree, never [hidden]
+        links.hidden = false;
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        return;
+      }
+      // Mobile: keep closed menu out of Safari 26 color sampling
+      if (!nav.classList.contains("is-open")) {
+        links.hidden = true;
+      }
+    };
+
+    const openMenu = () => {
+      window.clearTimeout(closeTimer);
+      links.hidden = false;
+      // Next frame so the open transition runs after [hidden] is cleared
+      requestAnimationFrame(() => {
+        nav.classList.add("is-open");
+        toggle.setAttribute("aria-expanded", "true");
+      });
+    };
+
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      // Wait for the slide/fade to finish, then remove from Safari's sample tree
+      closeTimer = window.setTimeout(() => {
+        if (!nav.classList.contains("is-open") && mobileNav()) {
+          links.hidden = true;
+        }
+      }, 450);
+    };
+
+    syncMenuLayer();
+    window.addEventListener("resize", syncMenuLayer, { passive: true });
+
     toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(open));
+      if (nav.classList.contains("is-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
     links.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
+        if (mobileNav()) closeMenu();
       });
     });
   }

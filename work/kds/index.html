@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#eef1f4" />
-    <title>KT UX Design System — 김관응</title>
+    <title>KT Design System — 김관응</title>
     <meta
       name="description"
-      content="KT UX Design System Maintainer로서 Figma Token Studio부터 React 라이브러리·Storybook/Chromatic까지 토큰 SSOT 파이프라인을 설계·운영한 케이스."
+      content="KT Design System 2.0.0을 Maintainer로서 운영하며, Figma API 토큰 동기화와 Storybook E2E, PC 컴포넌트까지 설계한 케이스."
     />
     <link rel="canonical" href="https://kwaneung.github.io/work/kds/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css?v=chin8" />
+    <link rel="stylesheet" href="/css/styles.css?v=kds1" />
   </head>
   <body>
     <div class="safari-chrome-tint" aria-hidden="true"></div>
@@ -41,12 +41,16 @@
         <header class="project-hero">
           <div class="wrap">
             <a class="project-hero__back" href="/#work">← Selected work</a>
-            <p class="project-hero__kicker">02 · KT · 2026.01 – Present</p>
-            <h1>KT UX Design System</h1>
+            <p class="project-hero__kicker">01 · KT · 2026.01 – Present</p>
+            <h1>KT Design System</h1>
             <p class="project-hero__lead">
-              Figma Token Studio → Style Dictionary → React 컴포넌트 라이브러리 →
-              Storybook/Chromatic까지 토큰 SSOT·테마·배포 파이프라인을 메인테이너로서
-              책임졌습니다.
+              2.0.0을 메인테이너로서 운영합니다. 1.x 모바일 퍼스트 위에 PC 컴포넌트를
+              더하고, 토큰은 Figma API로 동기화하며 Storybook E2E로 검증합니다.
+            </p>
+            <p class="project-hero__site">
+              <a href="https://uxdesign.kt.com/" rel="noopener noreferrer" target="_blank">
+                공개 가이드 · uxdesign.kt.com
+              </a>
             </p>
             <dl class="project-meta">
               <div>
@@ -55,15 +59,15 @@
               </div>
               <div>
                 <dt>Focus</dt>
-                <dd>토큰 · 테마 · 릴리스</dd>
+                <dd>2.0.0 · 토큰 · PC</dd>
               </div>
               <div>
                 <dt>Scale</dt>
-                <dd>~31 + AI UI · 4 themes</dd>
+                <dd>2.0.0 · 4 themes</dd>
               </div>
               <div>
                 <dt>Stack</dt>
-                <dd>Vite · Style Dictionary</dd>
+                <dd>Figma API · Storybook</dd>
               </div>
             </dl>
           </div>
@@ -91,13 +95,15 @@
                 <li>CSS Variables + CVA/BEM 기본, Tailwind v4 `@theme`는 옵션 산출</li>
                 <li>light / dark / light-agent / dark-agent를 `data-theme`으로 전환</li>
                 <li>AI UI(Prompt* 등)를 같은 토큰·테마 체계 안에 통합</li>
-                <li>Storybook 중심 검증과 Chromatic 시각 회귀, 시맨틱 버전 릴리스</li>
+                <li>1.x는 모바일 퍼스트. 2.0.0에서 PC 컴포넌트를 추가</li>
+                <li>토큰은 Figma API로 직접 동기화하고, Storybook E2E로 동작을 검증</li>
               </ul>
             </section>
 
             <section class="reveal">
               <h2>결정의 포인트</h2>
               <ul>
+                <li>2.0.0에서 Style Dictionary를 제거하고 토큰을 Figma API로 직접 동기화</li>
                 <li>component 토큰 신규 참조를 금지해 장기 드리프트·잘못된 참조 비용을 줄임</li>
                 <li>색은 semantic, spacing·radius는 primitive로 테마 적응을 분리</li>
                 <li>네이티브를 아카이브로 분리해 main의 웹 완성도에 집중</li>
@@ -107,13 +113,15 @@
             <section class="reveal">
               <h2>성과</h2>
               <ul>
-                <li>버전드 웹 라이브러리로 배포·소비 가능한 DS 구축</li>
-                <li>4테마 + AI 컴포넌트로 일반/에이전트 UI를 한 체계에서 지원</li>
-                <li>MYKT에서 소비하고 KDS에서 설계·운영하는 이중 역할로 핸드오프 비용 절감</li>
+                <li>버전드 웹 라이브러리 2.0.0으로 배포·소비</li>
+                <li>Figma API 동기화로 Style Dictionary 레이어를 제거</li>
+                <li>1.x 모바일 퍼스트 위에 PC 컴포넌트를 추가</li>
+                <li>마이케이티 웹, 토큰팩토리 등 대내외 프로젝트가 패키지를 사용</li>
+                <li>만드는 기준과 패키지를 쓰는 기준을 문서로 분리</li>
               </ul>
               <blockquote class="quote">
-                토큰 SSOT와 4테마 파이프라인을 설계·운영하며, 레거시 공존과 AI UI 통합까지
-                시스템을 유지·진화시키는 의사결정을 책임졌습니다.
+                1.x 모바일 퍼스트 위에 PC 컴포넌트를 더하고, 토큰은 Figma API로
+                동기화합니다. 동작은 Storybook E2E가 확인합니다.
               </blockquote>
             </section>
 
@@ -123,25 +131,23 @@
                 <span>pnpm</span>
                 <span>Vite</span>
                 <span>React</span>
-                <span>Style Dictionary</span>
+                <span>Figma API</span>
                 <span>CVA</span>
                 <span>CSS Variables</span>
-                <span>Storybook</span>
-                <span>Chromatic</span>
-                <span>Figma Token Studio</span>
+                <span>Storybook E2E</span>
               </div>
             </section>
           </div>
         </article>
 
         <nav class="wrap project-nav" aria-label="프로젝트 이동">
-          <a href="/work/mykt/">
+          <a href="/work/fund-direct/">
             <small>Previous</small>
-            <strong>MYKT 차세대 웹</strong>
+            <strong>수익증권 직접판매</strong>
           </a>
-          <a href="/work/woori-card/">
+          <a href="/work/mykt/">
             <small>Next</small>
-            <strong>우리카드 유니버셜</strong>
+            <strong>MYKT 차세대 웹</strong>
           </a>
         </nav>
       </main>

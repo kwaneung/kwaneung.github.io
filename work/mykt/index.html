@@ -7,7 +7,7 @@
     <title>MYKT 차세대 웹 — 김관응</title>
     <meta
       name="description"
-      content="KT MYKT 차세대 웹을 Nx 멀티앱으로 설계하고, 공유 플랫폼·홈 SDUI·GitOps까지 end-to-end로 구축한 케이스."
+      content="2025년에 KT MYKT 차세대 웹을 단일 앱으로 테크리딩하고, 2026년에 메인·에이전트로 나눠 배포와 장애를 격리한 케이스."
     />
     <link rel="canonical" href="https://kwaneung.github.io/work/mykt/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css?v=chin8" />
+    <link rel="stylesheet" href="/css/styles.css?v=kds1" />
   </head>
   <body>
     <div class="safari-chrome-tint" aria-hidden="true"></div>
@@ -41,11 +41,11 @@
         <header class="project-hero">
           <div class="wrap">
             <a class="project-hero__back" href="/#work">← Selected work</a>
-            <p class="project-hero__kicker">01 · KT · 2025.02 – Present</p>
+            <p class="project-hero__kicker">02 · KT · 2025.02 – Present</p>
             <h1>MYKT 차세대 웹</h1>
             <p class="project-hero__lead">
-              통신사 B2C 메인 앱을 앱 단위로 분리 가능한 모노레포로 재설계하고, 공유
-              플랫폼·홈 도메인·배포 파이프라인까지 end-to-end로 구축했습니다.
+              2025년에 차세대 웹을 단일 앱으로 테크리딩하고, 2026년에 메인과 에이전트로
+              나눠 배포·장애 단위를 앱으로 고정했습니다.
             </p>
             <dl class="project-meta">
               <div>
@@ -54,7 +54,7 @@
               </div>
               <div>
                 <dt>Focus</dt>
-                <dd>멀티앱 · SDUI · GitOps</dd>
+                <dd>앱 분리 · SDUI · GitOps</dd>
               </div>
               <div>
                 <dt>Stack</dt>
@@ -73,19 +73,18 @@
             <section class="reveal">
               <h2>문제</h2>
               <p>
-                기존 웹은 단일 앱에 기능이 밀집되어 있었습니다. AI 챗과 메인 서비스의
-                릴리스 주기·트래픽 특성이 다른데도 함께 배포되었고, 도메인이 늘수록 경계가
-                흐려졌습니다. Android/iOS WebView 하이브리드와 엔터프라이즈 배포를 동시에
-                만족해야 했습니다.
+                차세대 웹은 2025년에 단일 앱으로 시작했습니다. 홈, 인증, WebView, GitOps를
+                그 앱에서 닫았습니다. 2026년에는 AI 챗과 메인의 릴리스 주기가 달라, 같이
+                배포되면 챗 변경이 홈 장애로 이어졌습니다.
               </p>
             </section>
 
             <section class="reveal">
               <h2>솔루션</h2>
               <p>
-                코드는 모노레포에서 공유하고, 배포·장애 단위는 앱으로 나눴습니다. 메인
-                앱과 에이전트(AI 챗) 앱을 Ingress path로 분리하고, 공통 libs와 BFF로
-                플랫폼을 고정했습니다.
+                2026년에 코드는 모노레포에서 공유하고, 배포·장애 단위는 앱으로 나눴습니다.
+                메인 앱과 에이전트(AI 챗) 앱을 Ingress로 분리하고, 공통 libs와 BFF로
+                플랫폼을 고정했습니다. 앱을 나눈 뒤에는 바뀐 앱만 빌드합니다.
               </p>
               <ul>
                 <li>util → data-access → ui → feature 4계층을 린트/CI로 강제</li>
@@ -111,13 +110,13 @@
                 <li>메인·에이전트 독립 배포로 릴리스·장애 격리</li>
                 <li>CMS 주도 카드 시스템으로 노출·순서를 코드 배포 없이 제어</li>
                 <li>공통 플랫폼과 GitOps로 팀 확장과 운영 자동화 기반 확보</li>
-                <li>수동 배포 제거·빌드 시간 약 40% 단축으로 릴리스 리드타임 축소</li>
+                <li>앱을 나눈 뒤 수동 배포를 없애고 빌드 시간을 약 40% 줄임</li>
                 <li>Datadog RUM·APM으로 장애 대응·릴리스 피드백 루프 확보</li>
                 <li>리포지토리 핵심 기여자로 약 2,550 커밋 기여</li>
               </ul>
               <blockquote class="quote">
-                Nx 멀티앱으로 경계를 나누고, 공유 플랫폼·홈 SDUI·CI/CD·GitOps까지 한 흐름으로
-                구축해 확장 가능하고 회복탄력적인 B2C 웹을 만들었습니다.
+                2025년에 단일 앱으로 홈·브릿지·GitOps를 닫고, 2026년에 메인과 에이전트로
+                나눠 챗 릴리스가 홈 장애로 번지지 않게 했습니다.
               </blockquote>
             </section>
 
@@ -141,13 +140,13 @@
         </article>
 
         <nav class="wrap project-nav" aria-label="프로젝트 이동">
-          <a href="/work/fund-direct/">
-            <small>Previous</small>
-            <strong>수익증권 직접판매</strong>
-          </a>
           <a href="/work/kds/">
+            <small>Previous</small>
+            <strong>KT Design System</strong>
+          </a>
+          <a href="/work/woori-card/">
             <small>Next</small>
-            <strong>KT UX Design System</strong>
+            <strong>우리카드 유니버셜</strong>
           </a>
         </nav>
       </main>

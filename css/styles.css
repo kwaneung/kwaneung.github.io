@@ -872,6 +872,22 @@ a:hover {
   max-width: 46ch;
 }
 
+.project-hero__site {
+  margin: 1.1rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.project-hero__site a {
+  color: var(--accent-deep);
+  text-decoration: none;
+}
+
+.project-hero__site a:hover {
+  text-decoration: underline;
+}
+
 .project-meta {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
